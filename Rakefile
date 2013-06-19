@@ -20,7 +20,7 @@ namespace :install do
 
   desc "Set OSX Defaults"
   task :osx do
-    `./osx/set-defaults`
+    `~/dotfiles/osx/set-defaults.sh`
   end
 
   desc "Symlinks config files to the apporitate locations" 
