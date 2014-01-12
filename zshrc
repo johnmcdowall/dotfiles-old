@@ -77,16 +77,11 @@ alias rdtp='be rake db:test:prepare'
 
 alias download="curl -OJ"
 
+alias waste=history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
+
 if [[ -a ~/.env_variables ]]; then
   source ~/.env_variables
 fi
-
-# Make Rails Faster
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
 
 PATH=$PATH:$HOME/dotfiles/scripts
 

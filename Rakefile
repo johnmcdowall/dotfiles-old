@@ -1,5 +1,5 @@
 namespace :install do
-  desc "Clones the vundler plugin into ~/.vim/bundle" 
+  desc "Clones the vundler plugin into ~/.vim/bundle"
   task :install_vundler do
     commands = [
       "mkdir -p ~/.vim/bundle",
@@ -23,9 +23,10 @@ namespace :install do
     `~/dotfiles/osx/set-defaults.sh`
   end
 
-  desc "Symlinks config files to the apporitate locations" 
+  desc "Symlinks config files to the apporitate locations"
   task :configs do
     paths = {
+      'env_variables' => '~/.env_variables',
       'gemrc' => '~/.gemrc',
       'irbrc' => '~/.irbrc',
       'rvmrc' => '~/.rvmrc',
@@ -38,7 +39,7 @@ namespace :install do
       'rspec' => '~/.rspec'
     }.each_pair do |source, destination|
       puts "Linking #{source} => #{destination}"
-      real_path = File.expand_path "../#{source}", __FILE__    
+      real_path = File.expand_path "../#{source}", __FILE__
       %x(ln -sf #{real_path} #{destination})
     end
   end
