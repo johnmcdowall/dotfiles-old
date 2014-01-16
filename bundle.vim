@@ -12,10 +12,12 @@ call vundle#rc()
 " required!
 Bundle "gmarik/vundle"
 
+Bundle "altercation/vim-colors-solarized"
+
 " Language & Project specific plugins
 Bundle "vim-ruby/vim-ruby"
 Bundle "pangloss/vim-javascript"
-Bundle "taq/vim-rspec"
+Bundle "thoughtbot/vim-rspec"
 Bundle "kchmck/vim-coffee-script"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-rails"
@@ -35,6 +37,7 @@ Bundle "tpope/vim-repeat"
 Bundle "godlygeek/tabular"
 Bundle "tpope/vim-dispatch"
 Bundle "kien/ctrlp.vim"
+Bundle 'airblade/vim-gitgutter'
 
 " Required by vundle
 filetype plugin indent on

@@ -103,5 +103,13 @@ gifify() {
   fi
 }
 
+function g {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status
+  fi
+}
+
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
